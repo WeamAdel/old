@@ -1,0 +1,211 @@
+/* <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet"> */
+/* <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">*/
+.primary-btn {
+  border: none;
+  width: 220px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+
+/* My framework */
+/* Buttons */
+.primary-btn {
+  background-color: #2D2D2D;
+  color: white;
+}
+.primary-btn a {
+  color: white;
+}
+
+/* Text */
+.upper {
+  text-transform: uppercase;
+}
+
+.capital {
+  text-transform: capitalize;
+}
+
+/* general */
+body {
+  background-color: #B1EFB8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+*:focus, *:active {
+  outline: none !important;
+}
+
+* {
+  outline: none !important;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Start my styles */
+nav {
+  height: 140px;
+}
+nav .logo {
+  display: inline-block;
+  background: #2D2D2D;
+  color: #B1EFB8;
+  padding: 1em 1.5em;
+}
+
+main {
+  height: calc(100vh - 140px);
+}
+main .heading-wrapper {
+  margin-bottom: 52px;
+}
+main .heading-wrapper .text-wrapper {
+  margin-bottom: 44px;
+}
+main .heading-wrapper .text-wrapper h1 {
+  font-size: 60px;
+  letter-spacing: 12px;
+}
+main .heading-wrapper .btn-wrapper {
+  position: relative;
+}
+main .heading-wrapper .btn-wrapper button {
+  position: relative;
+  z-index: 2;
+}
+main .heading-wrapper .btn-wrapper .btn-bg {
+  width: 220px;
+  height: 44px;
+  background-color: #656565;
+  position: absolute;
+  right: 8px;
+  top: -8px;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+main .heading-wrapper .btn-wrapper:hover .btn-bg {
+  right: 0px;
+  top: 0px;
+}
+main .heading-wrapper .btn-wrapper:active {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+main .date-wrapper h2 {
+  font-size: 18px;
+  color: white;
+  text-shadow: 0 2px 0.5em rgba(0, 0, 0, 0.2);
+  margin-bottom: 32px;
+  letter-spacing: 4px;
+}
+main .date-wrapper .digit {
+  height: 60px;
+  width: 60px;
+  border: 4px solid #2D2D2D;
+  color: #2D2D2D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 18px;
+}
+
+.dialogue {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  width: 100vw;
+  background-color: white;
+  z-index: 3;
+  padding: 1em;
+  display: none;
+}
+.dialogue .dialogue-toggler {
+  position: absolute;
+  top: -3em;
+  right: 3em;
+  color: #2D9539;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.dialogue .dialogue-toggler:hover {
+  color: #2D2D2D;
+}
+.dialogue .dialogue-toggler:active {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+.dialogue .content-wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+.dialogue .content-wrapper h2 {
+  position: relative;
+  letter-spacing: 4px;
+}
+.dialogue .content-wrapper h2::before {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 70%;
+  position: absolute;
+  top: -12px;
+  background-color: #2D9539;
+}
+.dialogue .content-wrapper p {
+  color: #968F86;
+  line-height: 2;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  nav .logo {
+    padding: .75em 1em;
+    font-size: 14px;
+  }
+  nav .logo img {
+    width: 30px;
+  }
+
+  main .heading-wrapper .text-wrapper h1 {
+    font-size: 32px;
+  }
+  main .heading-wrapper .text-wrapper p {
+    max-width: 20em;
+  }
+  main .heading-wrapper .btn-wrapper button, main .heading-wrapper .btn-wrapper .btn-bg {
+    width: 180px !important;
+  }
+  main .date-wrapper .digit {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

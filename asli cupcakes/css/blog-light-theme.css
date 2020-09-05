@@ -1,0 +1,16 @@
+.blog {
+    background-color: white;
+}
+
+.blog, 
+.blog-nav .logo,
+.post-header,
+.post-main-content .other-posts,
+.post-main-content .other-posts .posts-wrapper .post,
+.blog-footer p{
+    color: #3D3D3D;
+
+}
+.blog-nav .tools .icons-wrapper .icon.theme-setting:hover {
+    color: black;
+}

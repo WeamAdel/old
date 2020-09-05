@@ -1,0 +1,17 @@
+.blog {
+    background-color: #3D3D3D;
+}
+
+.blog, 
+.blog-nav .logo,
+.post-header,
+.post-main-content .other-posts,
+.post-main-content .other-posts .posts-wrapper .post,
+.blog-footer p {
+    color: #FFF3F3;
+
+}
+
+.blog-nav .tools .icons-wrapper .icon.theme-setting:hover {
+    color: white;
+}

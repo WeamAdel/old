@@ -1,0 +1,242 @@
+//Sass Variables
+//Colors
+//Saturated
+$mainColor: #B1EFB8;
+$darkColor: #2D2D2D;
+$fadeDarkColor: #656565;
+
+//Greys
+//cold
+$coldGray1: #21252A;
+$coldGray2: #343A40;
+$coldGray3: #495057;
+$coldGray4: #868E96;
+$coldGray5: #ADB5BD;
+$coldGray6: #CED4DA;
+$coldGray7: #DEE2E6;
+$coldGray8: #E9ECEF;
+$coldGray9: #F1F3F5;
+$coldGray10: #F8F9FA;
+
+//Hot
+$hotGray1: #2A2721;
+$hotGray2: #403C34;
+$hotGray3: #575149;
+$hotGray4: #968F86;
+$hotGray5: #BDB9AD;
+$hotGray6: #DAD4CE;
+$hotGray7: #E6E1DE;
+$hotGray8: #EFECE9;
+$hotGray9: #F5F3F1;
+$hotGray10: #FAF9F8;
+
+//Mixins
+//Box shadow
+@mixin shadow($blur, $opacity) {
+  box-shadow: 0 4px $blur rgba(0,0,0, $opacity);
+}
+
+//Transition
+@mixin transition($time, $ease) {
+  transition: all $time $ease;
+  -webkit-transition: all $time $ease;
+  -moz-transition: all $time $ease;
+  -ms-transition: all $time $ease;
+  -o-transition: all $time $ease;
+}
+
+// Scale
+@mixin scale($ratio) {
+  transform: scale($ratio);
+  -webkit-transform: scale($ratio);
+  -moz-transform: scale($ratio);
+  -ms-transform: scale($ratio);
+  -o-transform: scale($ratio);
+}
+
+//Border radius
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+//fonts
+/* <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap" rel="stylesheet"> */
+/* <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">*/
+$roboto: 'Roboto', sans-serif;
+$robotoCondensed: 'Roboto Condensed', sans-serif;
+$garamond :'EB Garamond', serif;
+
+// Components
+%button {
+  border: none;
+  width: 220px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  cursor: pointer;
+  @include transition(.25s, ease-in-out);
+}
+
+/* My framework */
+
+/* Buttons */
+.primary-btn {
+  @extend %button;
+  background-color: $darkColor;
+  color: white;
+  a {color: white}
+}
+
+/* Text */
+.upper {text-transform: uppercase;}
+.capital {text-transform: capitalize;}
+
+/* general */
+body { background-color: $mainColor;  min-height: 100vh; overflow-x: hidden;}
+
+h1, h2, h3, h4, h5, h6 {}
+
+*:focus, *:active {outline: none !important;}
+*{outline: none !important; font-family: $roboto;}
+
+/* Start my styles */
+
+nav {
+  height: 140px;
+  .logo {
+    display: inline-block;
+    background: $darkColor;
+    color: $mainColor;
+    padding: 1em 1.5em;
+  }
+}
+main {
+  height: calc(100vh - 140px);
+  .heading-wrapper {
+    margin-bottom: 52px;
+    .text-wrapper {
+      margin-bottom: 44px;
+      h1 {font-size: 60px; letter-spacing: 12px;}
+    }
+    .btn-wrapper {
+      position: relative;
+      button {position: relative; z-index: 2; }
+  
+      .btn-bg {
+        width: 220px;
+        height: 44px;
+        background-color: $fadeDarkColor;
+        position: absolute;
+        right: 8px;
+        top: -8px;
+        z-index: 1;
+        @include transition(.25s, ease-in-out);
+      }
+  
+      &:hover {
+        .btn-bg {
+          right: 0px;
+          top: 0px;
+        }
+      }
+
+      &:active {
+        @include scale(.95);
+      }
+    }
+  }
+
+  .date-wrapper {
+    h2 {
+      font-size: 18px; 
+      color: white; 
+      text-shadow: 0 2px .5em rgba(0,0,0, .2);
+      margin-bottom: 32px;
+      letter-spacing: 4px;
+    }
+    .digit {
+      height: 60px;
+      width: 60px;
+      border: 4px solid $darkColor;
+      color: $darkColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      font-family: $robotoCondensed;
+      font-size: 18px;
+    }
+  }
+}
+
+.dialogue{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    width: 100vw;
+    background-color: white;
+    z-index: 3;
+    padding: 1em;
+    display: none;
+    .dialogue-toggler {
+      position: absolute;
+      top: -3em;
+      right: 3em;
+      color: #2D9539;
+      font-size: 20px;
+      cursor: pointer;
+      @include transition(.3s, ease-in-out);
+      &:hover {color: $darkColor;}
+      &:active {@include scale(.9)}
+    }
+    .content-wrapper {
+      max-width: 600px;
+      margin: auto;
+      h2 {
+        position: relative;
+        letter-spacing: 4px;
+        &::before {
+          content: '';
+          display: block;
+          height: 4px;
+          width: 70%;
+          position: absolute;
+          top: -12px;
+          background-color: #2D9539;
+        }
+      }
+      p{color: $hotGray4; line-height: 2;}
+    }
+}
+
+/* Responsive */
+@media(max-width: 767px) {
+  nav {
+    .logo {
+      padding: .75em 1em;
+      font-size: 14px;
+      img {width: 30px;}
+    }
+  }
+  main {
+    .heading-wrapper {
+      .text-wrapper {
+        h1 {font-size: 32px;}
+        p {max-width: 20em;}
+      }
+      .btn-wrapper {
+        button, .btn-bg{width: 180px !important;}
+      }
+    }
+    .date-wrapper {
+      .digit {width: 40px; height: 40px;}
+    }
+  }
+}
